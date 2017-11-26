@@ -1,0 +1,83 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>bin</id>
+	<formats>
+		<format>tar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<moduleSets>
+		<moduleSet>
+			<includes>
+				<include>${project.groupId}:gar-resource</include>
+				<include>${project.groupId}:gar-authserver</include>
+				<include>${project.groupId}:gar-ui</include>
+			</includes>
+			<binaries>
+				<outputDirectory>/softs</outputDirectory>
+				<dependencySets>
+				</dependencySets>
+				<includeDependencies>false</includeDependencies>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+	</moduleSets>
+	<fileSets>
+
+		<fileSet>
+			<directory>${basedir}/../gar-ui/target</directory>
+			<outputDirectory>/softs</outputDirectory>
+			<includes>
+				<include>gar-ui.jar</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+	<!-- <fileSet> -->
+	<!-- <directory>${basedir}/../bulk-sms-scripts/src/main</directory> -->
+	<!-- <outputDirectory>/softs/BULK_SMS_HOME</outputDirectory> -->
+	<!-- <includes> -->
+	<!-- <include>**/*</include> -->
+	<!-- </includes> -->
+	<!-- </fileSet> -->
+
+	<!-- <fileSet> -->
+	<!-- <directory>${basedir}/src/shell/v${bulk.sms.version}</directory> -->
+	<!-- <outputDirectory>/softs</outputDirectory> -->
+	<!-- <includes> -->
+	<!-- <include>setenv.sh</include> -->
+	<!-- </includes> -->
+	<!-- <lineEnding>unix</lineEnding> -->
+	<!-- </fileSet> -->
+
+	<!-- <fileSet> -->
+	<!-- <directory>${basedir}/src/shell/v${bulk.sms.version}</directory> -->
+	<!-- <outputDirectory>/setup</outputDirectory> -->
+	<!-- <includes> -->
+	<!-- <include>install_bulk_sms_v${bulk.sms.version}.sh</include> -->
+	<!-- <include>rollback_bulk_sms_v${bulk.sms.version}.sh</include> -->
+	<!-- </includes> -->
+	<!-- <lineEnding>unix</lineEnding> -->
+	<!-- </fileSet> -->
+
+	<!-- <fileSet> -->
+	<!-- <directory>${basedir}/src/sql</directory> -->
+	<!-- <outputDirectory>/sql</outputDirectory> -->
+	<!-- <includes> -->
+	<!-- <include>CreateBulkSmsSchema.sql</include> -->
+	<!-- <include>CreateBulkSmsSynonym.sql</include> -->
+	<!-- <include>InitBulkSmsSchema.sql</include> -->
+	<!-- <include>RollbackBulkSmsSchema.sql</include> -->
+	<!-- <include>RollbackBulkSmsSynonym.sql</include> -->
+	<!-- </includes> -->
+	<!-- </fileSet> -->
+	<!-- <fileSet> -->
+	<!-- <directory>${basedir}/src/init_users</directory> -->
+	<!-- <outputDirectory>/init_users</outputDirectory> -->
+	<!-- <includes> -->
+	<!-- <include>**/*</include> -->
+	<!-- </includes> -->
+	<!-- </fileSet> -->
+	<!-- </fileSets> -->
+</assembly>
