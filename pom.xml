@@ -36,6 +36,7 @@
 		<jhipster.server.version>1.1.9</jhipster.server.version>
 		<hibernate.version>5.2.8.Final</hibernate.version>
 		<log4j.version>1.2.17</log4j.version>
+		<jasypt.api.version>1.9.2</jasypt.api.version>
 	</properties>
 
 	<build>
@@ -189,13 +190,13 @@
 		<dependency>
 			<groupId>org.jasypt</groupId>
 			<artifactId>jasypt</artifactId>
-			<version>1.9.2</version>
+			<version>${jasypt.api.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.jasypt/jasypt-spring31 -->
 		<dependency>
 			<groupId>org.jasypt</groupId>
 			<artifactId>jasypt-spring31</artifactId>
-			<version>1.9.2</version>
+			<version>${jasypt.api.version}</version>
 		</dependency>
 
 		<dependency>
